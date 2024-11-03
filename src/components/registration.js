@@ -14,7 +14,7 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true); 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
@@ -28,11 +28,11 @@ const Register = () => {
 
       alert(`Registration successful as a ${userType}!`);
       
-      // Navigate to the appropriate dashboard based on user type
+    
       navigate(userType === 'doctor' ? '/doc' : '/pat'); 
       
     } catch (error) {
-      // Handle specific error messages
+  
       switch (error.code) {
         case 'auth/email-already-in-use':
           alert('This email address is already in use. Please use a different email.');
@@ -47,7 +47,7 @@ const Register = () => {
           alert('Error: ' + error.message);
       }
     } finally {
-      setIsLoading(false); // Reset loading state
+      setIsLoading(false);
     }
   };
 
@@ -65,8 +65,8 @@ const Register = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              disabled={isLoading} // Disable input when loading
-              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isLoading} 
+              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             />
           </div>
 
@@ -77,8 +77,8 @@ const Register = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              disabled={isLoading} // Disable input when loading
-              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isLoading} 
+              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             />
           </div>
 
@@ -89,8 +89,8 @@ const Register = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              disabled={isLoading} // Disable input when loading
-              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isLoading} 
+              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             />
           </div>
 
@@ -99,8 +99,8 @@ const Register = () => {
             <select
               value={userType}
               onChange={(e) => setUserType(e.target.value)}
-              disabled={isLoading} // Disable input when loading
-              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isLoading} 
+              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
               <option value="patient">Patient</option>
               <option value="doctor">Doctor</option>
@@ -109,8 +109,8 @@ const Register = () => {
 
           <button
             type="submit"
-            disabled={isLoading} // Disable button when loading
-            className={`w-full py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            disabled={isLoading} 
+            className={`w-full py-2 font-semibold text-white bg-teal-500 rounded-md hover:bg-teal-600 transition duration-200 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {isLoading ? 'Registering...' : 'Register'}
           </button>
@@ -120,7 +120,7 @@ const Register = () => {
           Already have an account? 
           <button 
             onClick={() => navigate('/')} 
-            className="text-blue-500 hover:underline ml-1"
+            className="text-teal-500 hover:underline ml-1"
           >
             Sign In
           </button>

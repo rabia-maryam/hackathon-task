@@ -1,4 +1,4 @@
-// src/pages/PatientDashboard.js
+
 import React, { useEffect, useState } from 'react';
 import { auth, db } from '../config/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -127,7 +127,7 @@ const PatientDashboard = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </label>
             <label className="block mb-2">
@@ -136,7 +136,7 @@ const PatientDashboard = () => {
                 type="text"
                 value={contactDetails}
                 onChange={(e) => setContactDetails(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </label>
             <label className="block mb-2">
@@ -144,7 +144,7 @@ const PatientDashboard = () => {
               <textarea
                 value={medicalHistory}
                 onChange={(e) => setMedicalHistory(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </label>
             <button
@@ -167,7 +167,7 @@ const PatientDashboard = () => {
             <p><strong>Medical History:</strong> {medicalHistory}</p>
             <button
               onClick={() => setIsEditing(true)}
-              className="mt-4 py-2 px-4 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200"
+              className="mt-4 py-2 px-4 font-semibold text-white bg-teal-500 rounded-md hover:bg-teal-600 transition duration-200"
             >
               Edit Details
             </button>
@@ -178,7 +178,7 @@ const PatientDashboard = () => {
       {/* Button to toggle appointment form */}
       <button
         onClick={() => setShowAppointment(!showAppointment)}
-        className="mb-4 py-2 px-4 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200"
+        className="mb-4 py-2 px-4 font-semibold text-white bg-teal-500 rounded-md hover:bg-teal-600 transition duration-200"
       >
         {showAppointment ? "Hide Appointment Form" : "Book an Appointment"}
       </button>

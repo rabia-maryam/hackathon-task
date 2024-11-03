@@ -65,7 +65,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
           </div>
           <div>
@@ -75,12 +75,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200"
+            className="w-full py-2 font-semibold text-white bg-teal-500 rounded-md hover:bg-teal-600 transition duration-200"
           >
             Login
           </button>
@@ -89,7 +89,7 @@ const Login = () => {
           Don’t have an account?{' '}
           <button 
             onClick={() => navigate('/reg')} 
-            className="text-blue-500 hover:underline"
+            className="text-teal-500 hover:underline"
           >
             Register Now
           </button>

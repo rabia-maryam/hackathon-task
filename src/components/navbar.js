@@ -50,9 +50,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 p-4">
+    <nav className="bg-teal-500 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-2xl font-bold">HealLink</h1>
+        <h1 className="text-white text-2xl font-bold">Doctor Service♡</h1>
         <ul className="flex items-center space-x-4">
           {!user ? (
             <li>

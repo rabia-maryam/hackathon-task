@@ -1,4 +1,4 @@
-// src/pages/AppointmentPage.js
+
 import React, { useEffect, useState } from 'react';
 import { auth, db } from '../config/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -20,7 +20,7 @@ const AppointmentPage = () => {
         setUserId(user.uid);
         fetchAppointments(user.uid);
       } else {
-        navigate('/login'); // Redirect to login if user is not authenticated
+        navigate('/login');
       }
     });
 
@@ -29,7 +29,7 @@ const AppointmentPage = () => {
 
   const fetchAppointments = async (userId) => {
     const appointmentsRef = collection(db, 'appointments');
-    const q = query(appointmentsRef, where('patientId', '==', userId)); // Fetch appointments for the logged-in patient
+    const q = query(appointmentsRef, where('patientId', '==', userId)); 
     const querySnapshot = await getDocs(q);
     
     const fetchedAppointments = [];
@@ -51,7 +51,7 @@ const AppointmentPage = () => {
         notes,
       });
       alert('Appointment created successfully!');
-      fetchAppointments(userId); // Refresh the list of appointments
+      fetchAppointments(userId);
       clearForm();
     } catch (error) {
       console.error("Error creating appointment: ", error);
@@ -86,7 +86,7 @@ const AppointmentPage = () => {
             Patient ID:
             <input
               type="text"
-              value={userId} // Auto-filled with the logged-in user's ID
+              value={userId} 
               readOnly
             />
           </label>
@@ -132,3 +132,4 @@ const AppointmentPage = () => {
 };
 
 export default AppointmentPage;
+
